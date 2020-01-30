@@ -12,14 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.net.Uri;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class MainActivity extends AppCompatActivity {
 
     DataBaseHelper myDB;
-    EditText editName, editSurname, editMarks, editId;
-    Button btnAddData, btnViewAll, btnUpdate, btnDelete, btnCall, btnEmail, btnWebSite;
+    EditText editName, editSurname, editMarks, editId, editValueToBeSent;
+    Button btnAddData, btnViewAll, btnUpdate, btnDelete, btnCall, btnEmail, btnWebSite, btnSendValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         editSurname = findViewById(R.id.editTextSurname);
         editMarks = findViewById(R.id.editTextMarks);
         editId = findViewById(R.id.editTextId);
+        editValueToBeSent = findViewById(R.id.editValueToBeSent);
         btnAddData = findViewById(R.id.button_Add);
         btnViewAll = findViewById(R.id.button_ViewAll);
         btnUpdate = findViewById(R.id.button_Update);
@@ -39,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btnCall = findViewById(R.id.button_Call);
         btnEmail = findViewById(R.id.button_Gmail);
         btnWebSite = findViewById(R.id.buttonWebSite);
+        btnSendValue = findViewById(R.id.button_SendValue);
         AddData();
         ViewAll();
         UpdateData();
@@ -46,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
         MakeCall();
         OpenEmailApp();
         OpenWebSite();
+        SendValue();
+    }
+
+    public void SendValue(){
+        btnSendValue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ReceivingvalueActivity.class);
+                intent.putExtra("text", editValueToBeSent.getText().toString());
+                startActivity(intent);
+            }
+        });
     }
 
     public void MakeCall(){
@@ -64,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
         btnEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.android.gm");
                 startActivity(intent);
             }
