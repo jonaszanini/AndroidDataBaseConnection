@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="2"
-    android:rowCount="6"
+    android:rowCount="11"
     tools:context=".MainActivity">
 
     <TextView
@@ -36,6 +36,16 @@
         android:layout_column="0"
         android:layout_marginLeft="40px"
         android:text="Marks:"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_marginLeft="40px"
+        android:text="Id:"
         android:textSize="24sp" />
 
     <EditText
@@ -74,11 +84,23 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <EditText
+        android:id="@+id/editTextId"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_row="4"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/button_Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="4"
+        android:layout_row="5"
         android:layout_column="0"
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:text="Add" />
@@ -87,7 +109,7 @@
         android:id="@+id/button_ViewAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="4"
+        android:layout_row="5"
         android:layout_column="1"
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:text="View all" />
@@ -101,7 +123,60 @@
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="Add New Student"
+        android:text="Student"
         android:textColor="#2196F3"
         android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_row="7"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:text="Social buttons"
+        android:textColor="#2196F3"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button_Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="6"
+        android:layout_column="0"
+        android:text="UPDATE" />
+
+    <Button
+        android:id="@+id/button_Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="6"
+        android:layout_column="1"
+        android:text="DELETE" />
+
+    <Button
+        android:id="@+id/button_Call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="8"
+        android:layout_column="1"
+        android:text="Call" />
+
+    <Button
+        android:id="@+id/button_Gmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="9"
+        android:layout_column="1"
+        android:text="Gmail" />
+
+    <Button
+        android:id="@+id/buttonWebSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="10"
+        android:layout_column="1"
+        android:text="Web Site" />
 </GridLayout>
